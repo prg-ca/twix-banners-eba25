@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-    <meta name="ad.size" content="width=300,height=600" />
+    <meta name="ad.size" content="width=480,height=320" />
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link rel="stylesheet" type="text/css" href="style.css" />
     <script src="https://s0.2mdn.net/ads/studio/cached_libs/tweenlite_2.0.1_min.js"></script>
@@ -14,20 +14,21 @@
         TweenLite.lagSmoothing(0);
         var tl = new TimelineMax({ repeat: 2, repeatDelay: 3});
         // var tl = new TimelineMax();
-
         tl.from("#schirm", 0.6, { autoAlpha: 1 })
           .from("#logo", 0.4, { opacity: 0, scale: 0.5 }, "-=0.25")
-          .from("#slogan", 0.4, { opacity: 0, scale: 2 }, "+=0.1")
+          .from("#slogan0", 0.25, { y: 320, scale: 2 }, "+=0.1")
+          .to("#slogan0", 0.25, { y: 300, scale: 0.8 }, "+=1.1")
           .from("#bars", 0.4, { opacity: 0, scale: 2 }, "-=0.1")
+          .from("#slogan", 0.4, { opacity: 0, scale: 1.5, x: -320 }, "+=0.1")
 
-          .from("#ticket", 0.4, { opacity: 0, scale: 0.5 }, "-=0.25")
+          .from("#ticket", 0.4, { opacity: 0, scale: 1.5, x: 300 }, "-=0.25")
 
-          .from("#cloud-l", 0.6, { x: -200, y: -40, scale: 1.5 }, "-=0.3")
-          .from("#cloud-r", 0.6, { x: 200, y: -40, scale: 1.5 }, "-=0.6")
-          .from("#palm-l", 0.6, { x: -100, y: 60, scale: 1.5 }, "-=0.5")
-          .from("#palm-r", 0.6, { x: 100, y: 60, scale: 1.5 }, "-=0.6")
-          .from("#plane-l", 0.6, { x: 100, y: 40, opacity: 0, scale: 0.5  }, "-=0.3")
-          .from("#plane-r", 0.6, { x: -100, y: 40, opacity: 0, scale: 0.5  }, "-=0.6")
+          .from("#cloud-l", 0.6, { x: -140, y: -80, scale: 1.5 }, "-=0.3")
+          .from("#cloud-r", 0.6, { x: 140, y: -80, scale: 1.5 }, "-=0.6")
+          .from("#palm-l", 0.6, { x: -150, y: 20, scale: 1.5 }, "-=0.5")
+          .from("#palm-r", 0.6, { x: 150, y: 20, scale: 1.5 }, "-=0.6")
+          .from("#plane-l", 0.6, { x: 100, y: 20, opacity: 0, scale: 0.5  }, "-=0.3")
+          .from("#plane-r", 0.6, { x: -100, y: 20, opacity: 0, scale: 0.5  }, "-=0.6")
           
           .to("#ticket", 0.4, {  scale: 1.2, rotation: '-10deg' }, "+=0.7")
           .to("#ticket", 0.4, { scale: 1, rotation: '-5deg' })
@@ -40,6 +41,9 @@
       <div class="container">
         <div id="logo" class="el">
           <img src="logo.png" />
+        </div>
+        <div id="slogan0" class="el">
+          <img src="slogan.svg" />
         </div>
         <div id="slogan" class="el">
           <img src="slogan.svg" />
